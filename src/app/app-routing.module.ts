@@ -13,9 +13,9 @@ const routes: Routes = [
     path: 'registration',
     loadChildren: () => import ('./register/register.module').then(m => m.RegisterModule)
   },
-  {
-    path: '**', redirectTo: 'users'
-  }
+  // {
+  //   path: '**', redirectTo: 'users'
+  // }
 ];
 
 @NgModule({

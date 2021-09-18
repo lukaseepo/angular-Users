@@ -11,7 +11,7 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 })
 export class RegisterComponent implements OnInit {
   text:string = 'Register';
-  id:number;
+  id:number = null;
   list:any[] = [];
   constructor(private user: UsersService, private fb: FormBuilder, private _router: Router, private _activatedRoute: ActivatedRoute) { }
 
@@ -20,9 +20,9 @@ export class RegisterComponent implements OnInit {
       this.id = param.id;
       if(param.id){
         this.text = 'Edit';
+        this.patchValue();
       }
     })
-    this.patchValue();
   }
 
   patchValue(){
@@ -104,7 +104,6 @@ export class RegisterComponent implements OnInit {
 
       })
     }
-
   }
 
 }

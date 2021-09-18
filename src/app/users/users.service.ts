@@ -16,7 +16,7 @@ export class UsersService {
   }
 
   getUserById(id):Observable<User>{
-    return this.http.get<User>(environment.apiKey + id)
+    return this.http.get<User>(`${environment.apiKey}${id}`)
   }
 
   postUsers(user:User):Observable<User>{
