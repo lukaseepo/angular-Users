@@ -1,0 +1,109 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="form">
+    <div class="form-control">
+      <div class="form-wrapper">
+        <label>E-mail:</label>
+        <input name="email" formControlName="email" type="email" >
+      </div>
+      <div class="validation" *ngIf="email.invalid &&
+          email.touched">
+        <div class="validation" *ngIf="email.errors.required">
+          Email field can not be empty
+        </div>
+        <div class="validation" *ngIf="email.errors.email">
+          Enter valid email
+        </div>
+      </div>
+    </div>
+    <div class="form-control password-group">
+      <div class="form-wrapper">
+        <label>Password:</label>
+        <input name="password" formControlName="password" type="password">
+      </div>
+      <div class="validation" *ngIf="password.invalid &&
+          password.touched">
+        <div class="validation" *ngIf="password.errors.required">
+          Password field can not be empty
+        </div>
+        <div class="validation" *ngIf="password.errors.pattern">
+          You can only use english letters and numbers
+        </div>
+        <div class="validation" *ngIf="password.errors.minlength && password.touched">
+          Password length should be more than {{password.errors.minlength.requiredLength}}
+        </div>
+      </div>
+      <div class="form-wrapper" style="padding-top: 20px;">
+        <label id="label-confirm">
+          <pre>Confirm Password:</pre></label>
+        <input name="confirmedPassword" formControlName="confirmedPassword" type="password">
+      </div>
+      <div class="validation" *ngIf="confirmedPassword.invalid ">
+        <div class="validation" *ngIf="confirmedPassword.errors.required &&
+          confirmedPassword.touched">
+          Password field can not be empty
+        </div>
+        <div class="validation" *ngIf="confirmedPassword.errors.pattern &&
+          confirmedPassword.touched">
+          You can only use english letters and numbers
+        </div>
+        <div class="validation" *ngIf="form.get('confirmedPassword').value  !== form.get('password').value && form.get('confirmedPassword').dirty">
+          your confirmed Password is not correct
+        </div>
+      </div>
+    </div>
+    <div class="form-control">
+      <div class="form-wrapper">
+        <label>Nickname:</label>
+        <input name="nickname" formControlName="nickname" type="text" >
+      </div>
+      <div class="validation" *ngIf="nickname.invalid">
+        <div class="validation" *ngIf="nickname.errors.required && nickname.touched">
+          Nickname field can not be empty
+        </div>
+        <div class="validation" *ngIf="nickname.errors.pattern && nickname.touched">
+          Nickname can only contain English characters numbers and _
+        </div>
+      </div>
+    </div>
+    <div class="form-control">
+      <div class="form-wrapper">
+        <label>Phone Number:</label>
+        <input name="number" formControlName="number"  type="text">
+      </div>
+      <div class="validation" *ngIf="number.invalid">
+        <div class="validation" *ngIf="number.errors.required && number.touched">
+          Phone Number field can not be empty
+        </div>
+        <div class="validation" *ngIf="number.errors.pattern && number.touched">
+          Phone Number should start with +380 and be equal to 9 numbers
+        </div>
+      </div>
+    </div>
+    <div class="form-control">
+      <div class="form-wrapper">
+        <label>Website:</label>
+        <input name="website" formControlName="website" type="text" placeholder="website">
+      </div>
+      <div class="validation" *ngIf="website.invalid">
+        <div class="validation" *ngIf="website.errors.required && website.touched">
+          Website field can not be empty
+        </div>
+        <div class="validation" *ngIf="website.errors.pattern && website.touched">
+          Enter valid website adress
+        </div>
+      </div>
+    </div>
+    <div class="form-control">
+      <div class="checkbox-wrapper">
+        <div class="form-wrapper">
+          <input formControlName="agree" type="checkbox"  id="chBox">
+          <div class="checkbox__text"> I have read the <a class="checkbox__link" href="#">agreement</a></div>
+        </div>
+      </div>
+    </div>
+    <button [disabled]="form.invalid || form.get('password').value !== form.get('confirmedPassword').value" class="btn" type="submit">
+      <span>{{text}}</span>
+    </button>
+  </form>
+</div>
+

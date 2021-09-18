@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: orange;
+  padding: 20px;
+  margin: 0 auto;
+  letter-spacing: 1px;
+  font-size: 18px;
+  ul {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    a {
+      padding-left: 14px;
+      padding-right: 14px;
+      text-decoration: none;
+      color: azure;
+    }
+  }
+}

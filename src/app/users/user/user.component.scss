@@ -1,0 +1,51 @@
+.container{
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  .item{
+    border: 4px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 250px;
+    margin-top: 40px;
+    padding-left: 30px;
+    padding-top: 30px;
+    .block{
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      .popUp{
+        background-color: gainsboro;
+        border-radius: 15px;
+        position: absolute;
+        top: 7%;
+        left: 50%;
+        padding: 25px;
+      }
+    }
+    h3{
+      font-size: 23px;
+      color: skyblue;
+    }
+  }
+}
+
+.delete{
+  display: inline-block;
+}
+
+
+.display{
+  display: block !important;
+}
+
+

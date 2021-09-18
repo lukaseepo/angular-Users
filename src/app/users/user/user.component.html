@@ -1,0 +1,21 @@
+<div class="container">
+  <div *ngFor="let item of users; let i = index" class="item">
+    <div class="block">
+      <div class="popUp">
+        Are you sure you want to delete {{item.email}}?
+        <button (click)="deleteUser(item.id)"  style="color: blue; background-color: red; padding: 5px">Yes</button>
+        <button (click)="declineDelete()" style="color: blue; background-color: green; padding: 5px">No</button>
+      </div>
+    </div>
+    <div class="delete">
+      <button (click)="togglePopUp()" style="color: black; background-color: red; padding: 5px; float: right; margin-right: 20px">delete</button>
+      <button [routerLink]="['/registration']" [queryParams]="{'id':item.id}" style="color: black; background-color: blue; padding: 5px; float: right; margin-right: 10px">edit</button>
+    </div>
+    <h3>Name: {{item.nickname | titlecase}}</h3>
+    <h3>Email: {{item.email | titlecase}}</h3>
+    <h3>Password: {{item.password | titlecase}}</h3>
+    <h3>Number: {{item.number | titlecase}}</h3>
+    <h3>Website: {{item.website | titlecase}}</h3>
+  </div>
+</div>
+
