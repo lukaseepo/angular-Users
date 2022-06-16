@@ -9,6 +9,7 @@ import {RegisterModule} from "./register/register.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CommonModule } from "@angular/common";
 
+
 @NgModule({
   declarations: [
     AppComponent,
