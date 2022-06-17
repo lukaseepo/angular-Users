@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiKey: 'https://3000-lukaseepo-angularusers-l6gcqkyraq7.ws-eu47.gitpod.io/users/'
+  apiKey: 'localhost:3000/users/'
 };
 
 /*
